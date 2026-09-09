@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnitrix Controller Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⌚ Omnitrix Controller</h1>
+        
+        <!-- Energy Bar -->
+        <div class="energy-section">
+            <div class="energy-label">
+                <span>Energy Level</span>
+                <span id="energyText">100/100</span>
+            </div>
+            <div class="energy-bar">
+                <div class="energy-fill" id="energyFill"></div>
+            </div>
+            <div class="energy-status" id="energyStatus">Ready to Transform</div>
+        </div>
+
+        <!-- Character Display -->
+        <div class="character-display">
+            <div class="model human-model active" id="humanModel">
+                <div class="character human">👨</div>
+                <p class="character-name">Human</p>
+            </div>
+            <div class="model heatblast-model" id="heatblastModel">
+                <div class="character heatblast">🔥</div>
+                <p class="character-name">Heatblast</p>
+            </div>
+            <div class="model four-arms-model" id="fourArmsModel">
+                <div class="character four-arms">💪</div>
+                <p class="character-name">Four Arms</p>
+            </div>
+            <div class="model xlr8-model" id="xlr8Model">
+                <div class="character xlr8">⚡</div>
+                <p class="character-name">XLR8</p>
+            </div>
+        </div>
+
+        <!-- Transformation Controls -->
+        <div class="controls">
+            <h2>Transformation Controls</h2>
+            <div class="button-grid">
+                <button class="transform-btn human-btn" data-state="Human" data-key="0">
+                    <span class="btn-number">0</span>
+                    <span class="btn-label">Human</span>
+                </button>
+                <button class="transform-btn heatblast-btn" data-state="Heatblast" data-key="1">
+                    <span class="btn-number">1</span>
+                    <span class="btn-label">Heatblast</span>
+                </button>
+                <button class="transform-btn four-arms-btn" data-state="FourArms" data-key="2">
+                    <span class="btn-number">2</span>
+                    <span class="btn-label">Four Arms</span>
+                </button>
+                <button class="transform-btn xlr8-btn" data-state="XLR8" data-key="3">
+                    <span class="btn-number">3</span>
+                    <span class="btn-label">XLR8</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat">
+                <label>Current Form:</label>
+                <span id="currentForm">Human</span>
+            </div>
+            <div class="stat">
+                <label>Cooldown Status:</label>
+                <span id="cooldownStatus">Ready</span>
+            </div>
+            <div class="stat">
+                <label>Game Time:</label>
+                <span id="gameTime">0:00</span>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>📋 How to Play</h3>
+            <ul>
+                <li>Press <kbd>0</kbd>, <kbd>1</kbd>, <kbd>2</kbd>, or <kbd>3</kbd> to transform</li>
+                <li>Each alien form consumes energy at <strong>10 points/sec</strong></li>
+                <li>Human form recharges energy at <strong>15 points/sec</strong></li>
+                <li>When energy reaches 0, you automatically return to human form</li>
+                <li>The omnitrix enters cooldown until fully recharged</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
